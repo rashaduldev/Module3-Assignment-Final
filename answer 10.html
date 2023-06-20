@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ....................... 10(a).............................. -->
+    
+    <button>Click Here</button>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex nulla porro ab? Nam vel distinctio
+        quod? Est hic amet nesciunt.</p>
+
+    <!-- ....................... 10(b).............................. -->
+
+    <head>
+        <style>
+            .highlight {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="newButton">Click Here</button>
+        <p id="newParagraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex nulla porro ab? Nam vel
+            distinctio
+            quod? Est hic amet nesciunt.</p>
+        <script>
+            var button = document.getElementById("newButton");
+            var paragraph = document.getElementById("newParagraph");
+
+            button.addEventListener("click", function () {
+                paragraph.classList.add("highlight");
+            });
+        </script>
+    </body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- ....................... 2(a).............................. -->
+    <script>
+        function sumOfSquere(numbers) {
+            var sumOfSquares = 0;
+            for (var i = 0; i < numbers.length; i++) {
+                sumOfSquares += Math.pow(numbers[i], 2);
+            }
+            var squareRoot = Math.sqrt(sumOfSquares);
+            return squareRoot;
+        }
+        var numbers = [11, 1];
+        var result = sumOfSquere(numbers);
+        document.write(result+"<br>"); // Output: 11.045361017187261
+    </script>
+
+        <!-- ....................... 2(b).............................. -->
+        <script>
+            function displaysumOfSquere(numbers) {
+                var sumOfSquares = 0;
+                for (var i = 0; i < numbers.length; i++) {
+                    sumOfSquares += Math.pow(numbers[i], 2);
+                }
+                var squareRoot = Math.sqrt(sumOfSquares);
+    
+                // Display the result
+                document.write("The square root of the sum of squares is: " + squareRoot);
+            }
+            var numbers = [1, 2, 3];
+            displaysumOfSquere(numbers);
+        </script>
+</body>
+</html>

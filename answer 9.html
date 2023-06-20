@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+          color: rgb(0, 255, 106);
+        }
+      </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" name="name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" name="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" name="password">
+        <span id="passwordError" class="error"></span>
+        <br><br>
+        <label for="confirmPasswordInput">Confirm Password:</label>
+        <input type="password" id="confirmPasswordInput" name="confirmPassword">
+        <span id="confirmPasswordError" class="error"></span>
+        <br><br>
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Retrieve form elements using their IDs
+            var nameInput = document.getElementById("nameInput");
+            var emailInput = document.getElementById("emailInput");
+            var passwordInput = document.getElementById("passwordInput");
+            var confirmPasswordInput = document.getElementById("confirmPasswordInput");
+
+            // Retrieve error message elements using their IDs
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var passwordError = document.getElementById("passwordError");
+            var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+            // Reset previous error messages
+            nameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+
+            // Get the values entered by the user
+            var name = nameInput.value.trim();
+            var email = emailInput.value.trim();
+            var password = passwordInput.value;
+            var confirmPassword = confirmPasswordInput.value;
+
+            // Flag to track overall form validity
+            var isValid = true;
+
+            // Validate Name field
+            if (name === "") {
+                nameError.textContent = "Name is required.";
+                isValid = false;
+            } else if (!/^[a-zA-Z]+$/.test(name)) {
+                nameError.textContent = "Name should contain only letters.";
+                isValid = false;
+            }
+
+            // Validate Email field
+            if (email === "") {
+                emailError.textContent = "Email is required.";
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                emailError.textContent = "Invalid email address.";
+                isValid = false;
+            }
+
+            // Validate Password field
+            if (password.length < 8 || !isValidPassword(password)) {
+                passwordError.textContent =
+                    "Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.";
+                isValid = false;
+            }
+
+            // Validate Confirm Password field
+            if (confirmPassword !== password) {
+                confirmPasswordError.textContent = "Confirm password does not match the password.";
+                isValid = false;
+            }
+
+            // Submit the form if all fields are valid
+            if (isValid) {
+                // Perform further actions, such as submitting the form
+                console.log("Form submitted successfully!");
+            }
+        }
+
+        // Function to check if the email is valid
+        function isValidEmail(email) {
+            // Regular expression for email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Function to check if the password is valid
+        function isValidPassword(password) {
+            // Regular expression for password validation
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            return passwordRegex.test(password);
+        }
+    </script>
+
+</body>
+
+</html>

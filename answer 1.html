@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <!-- ....................... 1(a).............................. -->
+      <script>
+        function weekOfDay(peramitar){
+            const weekDays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            const realDate=new Date(peramitar);
+            const index = realDate.getDay();
+            const daysWeek=weekDays[index];
+            return daysWeek;
+        }
+        const realDate="2022-06-08"
+       const daysWeek= weekOfDay(realDate);
+        document.write(daysWeek);
+    </script>
+
+     <!-- ....................... 1(b).............................. -->
+     <script>
+        function weekOfDay(){
+            const weekDays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            const orDate=new Date();
+            const index = orDate.getDay();
+            const daysWeek=weekDays[index];
+            document.write(daysWeek);  
+        }
+        const orDate="";
+        weekOfDay();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ....................... 7(a).............................. -->
+    
+    <script>
+        document.addEventListener("click", function (event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            alert("Clicked at coordinates: (" + x + ", " + y + ")");
+        });
+    </script>
+    <!-- ....................... 7(b).............................. -->
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            var keyCode = event.keyCode || event.which;
+            alert("Key code: " + keyCode);
+        });
+    </script>
+
+    <!-- ....................... 7(c).............................. -->
+
+    <img id="myImage" src="dom.jpg" style="height: 500px;width: 500px;">
+    <script>
+        var image = document.getElementById("myImage");
+
+        image.addEventListener("mouseover", function () {
+            image.src = "Document.jpg";
+        });
+
+        image.addEventListener("mouseout", function () {
+            image.src = "dom.jpg";
+        });
+        
+    </script>
+</body>
+</html>

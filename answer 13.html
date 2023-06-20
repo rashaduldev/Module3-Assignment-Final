@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- ....................... 13(a).............................. -->
+
+    <p id="p1">This is paragraph 1.</p>
+    <p id="p2" class="highlight">This is paragraph 2 with the "highlight" class.</p>
+    <p id="p3" class="italic">This is paragraph 3 with the "italic" class.</p>
+    <p id="p4" class="highlight italic">This is paragraph 4 with both "highlight" and "italic" classes.</p>
+
+    <!-- ....................... 13(b).............................. -->
+
+    <p id="p1" class="p1">This is paragraph 1.</p>
+    <p id="p2" class="highlight">This is paragraph 2 with the "highlight" class.</p>
+    <p id="p3" class="italic">This is paragraph 3 with the "italic" class.</p>
+    <p id="p4" class="highlight_italic">This is paragraph 4 with both "highlight" and "italic" classes.</p>
+    <button onclick="findClass()">Click & Change</button>
+    <script>
+        function findClass() {
+            document.querySelector('.p1').style.color = "red"
+            document.querySelector('.highlight').style.color = "red"
+            document.querySelector('.italic').style.color = "red"
+            document.querySelector('.highlight_italic').style.color = "red"
+        }
+    </script>
+</body>
+</html>
